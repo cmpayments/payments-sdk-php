@@ -31,7 +31,7 @@ class Charge
     public function __construct(Money $money, array $payments = null)
     {
         $this->money = $money;
-        $this->payments = $payments ?? [];
+        $this->payments = $payments ? $payments : [];
     }
 
     /**

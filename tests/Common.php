@@ -10,7 +10,6 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use function GuzzleHttp\Psr7\stream_for;
 
 /**
  * Class Common
@@ -93,7 +92,7 @@ class Common extends \PHPUnit_Framework_TestCase
     {
         $httpClient = null;
         if ($mocked) {
-            $body = stream_for(\GuzzleHttp\json_encode(['status' => 'success']));
+            $body = \GuzzleHttp\Psr7\stream_for(\GuzzleHttp\json_encode(['status' => 'success']));
             $mockHandler = new MockHandler([
                 new Response(200, [], $body)
             ]);
