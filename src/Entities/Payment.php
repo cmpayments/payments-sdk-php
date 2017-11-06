@@ -125,20 +125,29 @@ class Payment
             ],
         ];
 
-        $urls = [
-            'success_url' => 'successUrl',
-            'cancelled_url' => 'cancelledUrl',
-            'failed_url' => 'failedUrl',
-            'expired_url' => 'expiredUrl',
-            'callback_url' => 'callbackUrl',
-        ];
-
-        foreach ($urls as $jsonNode => $propertyName) {
-            if (!empty($this->$propertyName)) {
-                $array['payment_details'][$jsonNode] = $this->$propertyName;
-            }
-        }
+        $array = $this->setUrlIfAvailable($array, 'success_url', 'successUrl');
+        $array = $this->setUrlIfAvailable($array, 'cancelled_url', 'cancelledUrl');
+        $array = $this->setUrlIfAvailable($array, 'failed_url', 'failedUrl');
+        $array = $this->setUrlIfAvailable($array, 'expired_url', 'expiredUrl');
+        $array = $this->setUrlIfAvailable($array, 'callback_url', 'callbackUrl');
 
         return $array;
+    }
+
+    /**
+     * Set a URL in the array structure if it is available.
+     *
+     * @param array $structure
+     * @param string $jsonNode
+     * @param string $propertyName
+     * @return array
+     */
+    private function setUrlIfAvailable($structure, $jsonNode, $propertyName)
+    {
+        if (!empty($this->$propertyName)) {
+            $structure['payment_details'][$jsonNode] = $this->$propertyName;
+        }
+
+        return $structure;
     }
 }
