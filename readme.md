@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/cmpayments/payments-sdk-php.svg?branch=master)](https://travis-ci.org/cmpayments/payments-sdk-php)
+
 # CMPayments Payment SDK for PHP
 Integrating the CMPayments solutions for online payments with your application is easy using the Payment SDK for PHP.
 
