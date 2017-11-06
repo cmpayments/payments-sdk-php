@@ -48,8 +48,16 @@ class DirectDebitPayment extends Payment
      * @param string $transactionDescription = null
      * @internal param string $bic
      */
-    public function __construct(Money $money, $purchaseId, $iban, $name, $mandateId, \DateTime $mandateStartDate, $description, $transactionDescription = null)
-    {
+    public function __construct(
+        Money $money,
+        $purchaseId,
+        $iban,
+        $name,
+        $mandateId,
+        \DateTime $mandateStartDate,
+        $description,
+        $transactionDescription = null
+    ) {
         parent::__construct($money, 'DirectDebit', $purchaseId);
 
         $this->description = $description;
