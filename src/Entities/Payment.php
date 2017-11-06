@@ -125,20 +125,18 @@ class Payment
             ],
         ];
 
-        if (!empty($this->successUrl)) {
-            $array['payment_details']['success_url'] = $this->successUrl;
-        }
-        if (!empty($this->cancelledUrl)) {
-            $array['payment_details']['cancelled_url'] = $this->cancelledUrl;
-        }
-        if (!empty($this->failedUrl)) {
-            $array['payment_details']['failed_url'] = $this->failedUrl;
-        }
-        if (!empty($this->expiredUrl)) {
-            $array['payment_details']['expired_url'] = $this->expiredUrl;
-        }
-        if (!empty($this->callbackUrl)) {
-            $array['payment_details']['callback_url'] = $this->callbackUrl;
+        $urls = [
+            'success_url' => 'successUrl',
+            'cancelled_url' => 'cancelledUrl',
+            'failed_url' => 'failedUrl',
+            'expired_url' => 'expiredUrl',
+            'callback_url' => 'callbackUrl',
+        ];
+
+        foreach ($urls as $jsonNode => $propertyName) {
+            if (!empty($this->$propertyName)) {
+                $array['payment_details'][$jsonNode] = $this->$propertyName;
+            }
         }
 
         return $array;
