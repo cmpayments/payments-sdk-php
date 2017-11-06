@@ -2,6 +2,7 @@
 
 [![Build Status][badge-build]][build]
 [![Scrutinizer][badge-quality]][quality]
+[![Coverage][badge-coverage]][quality]
 [![Software License][badge-license]][license]
 [![Total Downloads][badge-downloads]][downloads]
 
@@ -115,11 +116,11 @@ $amount = $converter->toFloat($money);
 
 [badge-build]: https://img.shields.io/travis/cmpayments/payments-sdk-php.svg?style=flat-square
 [badge-quality]: https://img.shields.io/scrutinizer/g/cmpayments/payments-sdk-php.svg?style=flat-square
+[badge-coverage]: https://img.shields.io/scrutinizer/coverage/g/cmpayments/payments-sdk-php.svg?style=flat-square
 [badge-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [badge-downloads]: https://img.shields.io/packagist/dt/cmpayments/payments-sdk-php.svg?style=flat-square
 
 [license]: https://github.com/cmpayments/payments-sdk-php/blob/master/LICENSE
 [build]: https://travis-ci.org/cmpayments/payments-sdk-php
 [quality]: https://scrutinizer-ci.com/g/cmpayments/payments-sdk-php/
-[coverage]: https://coveralls.io/r/cmpayments/payments-sdk-php?branch=master
 [downloads]: https://packagist.org/packages/cmpayments/payments-sdk-php
