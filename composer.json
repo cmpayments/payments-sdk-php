@@ -1,0 +1,38 @@
+{
+    "name": "cmpayments/payment-sdk-php",
+    "description": "SDK that makes it each to connect to the CMPayments payment API",
+    "homepage": "https://www.cmpayments.com",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jory Geerts",
+            "email": "jory.geerts@cm.nl"
+        },
+        {
+            "name": "Michel Westerink",
+            "email": "michel.westerink@cm.nl"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "CMPayments\\PaymentSdk\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CMPayments\\PaymentSdk\\Test\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=5.5.0",
+        "cmpayments/guzzle-psp-authentication-middleware": "^1.0",
+        "moneyphp/money": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.7|>=5.0 <5.4",
+        "squizlabs/php_codesniffer": "^2.3",
+        "jakub-onderka/php-parallel-lint": "^0.9.0"
+    }
+}
