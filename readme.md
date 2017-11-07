@@ -10,7 +10,7 @@ Integrating the CMPayments solutions for online payments with your application i
 
 ## Installation
 To install the SDK, simply use [Composer](https://getcomposer.org/):
-```composer require cmpayments/payment-sdk-php```
+```composer require cmpayments/payments-sdk-php```
 
 ### Requirements
  - PHP 5.5+
