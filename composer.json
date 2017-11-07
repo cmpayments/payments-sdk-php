@@ -1,5 +1,5 @@
 {
-    "name": "cmpayments/payment-sdk-php",
+    "name": "cmpayments/payments-sdk-php",
     "description": "SDK that makes it easy to connect to the CMPayments payment API",
     "homepage": "https://www.cmpayments.com",
     "type": "library",
