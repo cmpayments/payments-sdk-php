@@ -53,16 +53,23 @@ class Gateway
      * Execute a request against the Payments API.
      *
      * @param RequestInterface $request
+     * @param array $headers
      * @return array
      */
-    public function execute(RequestInterface $request)
+    public function execute(RequestInterface $request, array $headers = [])
     {
+        $options = [
+            'json' => $request->getPayload(),
+        ];
+
+        if (\count($headers)) {
+            $options['headers'] = $headers;
+        }
+
         $guzzleResponse = $this->httpClient->request(
             $request->getRequestMethod(),
             $request->getEndpoint(),
-            [
-                'json' => $request->getPayload()
-            ]
+            $options
         );
 
         return \GuzzleHttp\json_decode($guzzleResponse->getBody()->getContents());
